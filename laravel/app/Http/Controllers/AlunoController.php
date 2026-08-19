@@ -2,26 +2,70 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreAlunoRequest;
+use App\Http\Requests\UpdateAlunoRequest;
+use App\Models\Aluno;
 
 class AlunoController extends Controller
 {
-    function index(){ 
-        return view('aluno.index');
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $alunos = [
+            ["nome"=>"Miranata", "email"=>"m@hotmail.com"],
+            ["nome"=>"Barata", "email"=>"b@hotmail.com"],
+        ];
+
+        return $alunos;
     }
 
-    function add(Request $dados) { 
-        $aluno = new \App\Models\AlunoModel();
-        $aluno::create($dados->all());
-
-        $alunos = new \App\Models\AlunoModel();
-
-        return view('aluno.index', ['success'=>'Cadastrado!', 'alunos'=>$alunos::all()]);
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
-    function remove() { }
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreAlunoRequest $request)
+    {
+        //
+    }
 
-    function edit() { }
+    /**
+     * Display the specified resource.
+     */
+    public function show(Aluno $aluno)
+    {
+        //
+    }
 
-    function list() { }
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Aluno $aluno)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateAlunoRequest $request, Aluno $aluno)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Aluno $aluno)
+    {
+        //
+    }
 }
