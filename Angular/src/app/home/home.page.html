@@ -1,6 +1,16 @@
 <ion-content [fullscreen]="true">
 
-    <ion-button color="secondary">Teste</ion-button>
+    <div>
+        {{ this.titulo }}
+    </div>
+    <ng-container *ngFor="let aluno of this.alunos">
+        <h1>{{ aluno.nome }}</h1>
+        <h3>{{ aluno.email }}</h3>
+    </ng-container>
+
+    <form action="http://127.0.0.1:8000/aluno/create" method="post">
+        
+    </form>
     
     
 </ion-content>
